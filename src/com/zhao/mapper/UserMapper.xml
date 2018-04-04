@@ -79,7 +79,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from "RCP_DEV"."user"
+    from "RCP_DEV"."tb"
         <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -91,24 +91,24 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from "RCP_DEV"."user"
+    from "RCP_DEV"."tb"
     where "idUser" = #{iduser,jdbcType=INTEGER}
   </select>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from "RCP_DEV"."user"
+    delete from "RCP_DEV"."tb"
     where "idUser" = #{iduser,jdbcType=INTEGER}
   </delete>
   
   <delete id="deleteByExample" parameterType="com.zhao.pojo.UserExample" >
-    delete from "RCP_DEV"."user"
+    delete from "RCP_DEV"."tb"
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   
   <insert id="insert" parameterType="com.zhao.pojo.User" >
-    insert into "RCP_DEV"."user" ("idUser", "UserName", "Password", 
+    insert into "RCP_DEV"."tb" ("idUser", "UserName", "Password", 
       "NickName", "email"
       )
     values (#{iduser,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
@@ -117,7 +117,7 @@
   </insert>
   
   <insert id="insertSelective" parameterType="com.zhao.pojo.User" >
-    insert into "RCP_DEV"."user"
+    insert into "RCP_DEV"."tb"
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="iduser != null" >
         idUser,
@@ -155,14 +155,14 @@
   </insert>
   
   <select id="countByExample" parameterType="com.zhao.pojo.UserExample" resultType="java.lang.Integer" >
-    select count(*) from "RCP_DEV"."user"
+    select count(*) from "RCP_DEV"."tb"
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   
   <update id="updateByExampleSelective" parameterType="map" >
-    update "RCP_DEV"."user"
+    update "RCP_DEV"."tb"
     <set >
       <if test="record.iduser != null" >
         idUser = #{record.iduser,jdbcType=INTEGER},
@@ -186,7 +186,7 @@
   </update>
   
   <update id="updateByExample" parameterType="map" >
-    update "RCP_DEV"."user"
+    update "RCP_DEV"."tb"
     set idUser = #{record.iduser,jdbcType=INTEGER},
       UserName = #{record.username,jdbcType=VARCHAR},
       Password = #{record.password,jdbcType=VARCHAR},
@@ -198,7 +198,7 @@
   </update>
   
   <update id="updateByPrimaryKeySelective" parameterType="com.zhao.pojo.User" >
-    update "RCP_DEV"."user"
+    update "RCP_DEV"."tb"
     <set >
       <if test="username != null" >
         "UserName" = #{username,jdbcType=VARCHAR},
@@ -217,7 +217,7 @@
   </update>
   
   <update id="updateByPrimaryKey" parameterType="com.zhao.pojo.User" >
-    update "RCP_DEV"."user"
+    update "RCP_DEV"."tb"
     set "UserName" = #{username,jdbcType=VARCHAR},
       "Password" = #{password,jdbcType=VARCHAR},
       "NickName" = #{nickname,jdbcType=VARCHAR},
@@ -227,6 +227,6 @@
   
   <select id="maxPrimaryKey" resultType="java.lang.Integer">
     <!-- select case  when idUser IS null then 0 else MAX("idUser") end from public.user -->
-    SELECT NULLIF( MAX("idUser") , '0') from "RCP_DEV"."user"
+    SELECT NULLIF( MAX("idUser") , '0') from "RCP_DEV"."tb"
   </select>
 </mapper>
