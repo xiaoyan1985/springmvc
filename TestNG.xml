@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >  
-<suite name="Default suite" allow-return-values="true">
-	<test name="Default test">
-		<classes>
-			<class name="com.zhao.mapper.UserMapper.java"></class>
-		</classes>
-	</test>
-</suite>
