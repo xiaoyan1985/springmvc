@@ -3,7 +3,7 @@
 <suite name="Default suite" allow-return-values="true">
 	<test name="Default test">
 		<classes>
-			<class name="com.selenium.TestNGMVC"></class>
+			<class name="com.zhao.mapper.UserMapper.java"></class>
 		</classes>
 	</test>
 </suite>
